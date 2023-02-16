@@ -18,10 +18,8 @@ router.post('/', async (req, res) => {
   });
 
   //Guardamos en la db de mongo.
-  await newCollection.save();
-
-  console.log('SAVING: ', newCollection);
-  res.json('Saving new collection');
+  const collectionSaved = await newCollection.save();
+  res.json(collectionSaved);
 });
 
 export default router;
