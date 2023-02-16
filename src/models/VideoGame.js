@@ -22,3 +22,5 @@ const videoGamesSchema = new Schema({
   versionKey: false,
   timestamps: true
 });
+
+export default model('Videogame', videoGamesSchema);

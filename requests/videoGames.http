@@ -1,0 +1,52 @@
+###
+GET http://localhost:30030/api/collections/videoGames
+
+###
+POST http://localhost:30030/api/collections/videoGame
+Content-Type: application/json
+
+{
+  "name": "Resident Evil 2",
+  "description": "La trama tiene lugar dos meses después de los acontecimientos del primer juego. Transcurre en Raccoon City, una ciudad estadounidense cuya población en su mayoría ha sido transformada en zombie por el virus-T, un arma biológica desarrollada por la compañía Umbrella.",
+  "releaseDate": "21 de enero de 1998"
+}
+
+###
+POST http://localhost:30030/api/collections/videoGame
+Content-Type: application/json
+
+{
+  "name": "Resident Evil 3",
+  "description": "La historia se divide en dos mitades; la primera discurre durante las primeras horas del brote del virus T en Raccoon City situándose 24 horas antes de los acontecimientos ocurridos en Resident Evil 2 y la última toma lugar dos días después de dichos sucesos.",
+  "releaseDate": "21 de febrero de 2000"
+}
+
+###
+POST http://localhost:30030/api/collections/videoGame
+Content-Type: application/json
+
+{
+  "name": "Parasite Eve II",
+  "description": "Tres años después del Incidente ocurrido en Nueva York con los monstruos nacidos de las mitocondrias, Aya Brea, que fue parte de la Policía de la ciudad y una de las pocas personas que sobrevivieron al incidente, es ahora una agente del FBI que forma parte de una división especial llamada MIST, el cual es enviado a una misión urgente en el centro de Los Ángeles, donde ha habido informes de NMC's.",
+  "releaseDate": "25 de agosto de 2000"
+}
+
+###
+POST http://localhost:30030/api/collections/videoGame
+Content-Type: application/json
+
+{
+  "name": "Metal Gear Solid",
+  "description": "Metal Gear Solid sigue a Solid Snake, un soldado que se infiltra en una instalación de armas nucleares para neutralizar la amenaza terrorista de FOXHOUND, una unidad genéticamente mejorada de fuerzas especiales. Snake debe liberar a dos importantes rehenes, confrontar a los terroristas y evitar el lanzamiento de un ataque nuclear.",
+  "releaseDate": "3 de septiembre de 1998"
+}
+
+###
+POST http://localhost:30030/api/collections/videoGame
+Content-Type: application/json
+
+{
+  "name": "Silent Hill",
+  "description": "El juego sigue a Harry Mason mientras busca a su hija en el pueblo de Silent Hill. Al avanzar la trama, Harry descubrirá la verdad acerca de la ciudad y de un culto que desea llevar a cabo un ritual para traer a una deidad a la tierra. El juego posee 5 finales, que se obtienen según las acciones tomadas por el jugador, incluyendo un final de broma.",
+  "releaseDate": "1 de agosto de 1999"
+}
