@@ -5,7 +5,7 @@
 // index -> arranque del servidor.
 // routes -> definición de las urls.
 import express from 'express';
-import IndexRoutes from './routes/index';
+import GCollectionRoutes from './routes/gamesCollection.routes';
 
 // our server -> contains all routes, methods, etc.
 const app = express();
@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
   })
 });
 
-app.use(IndexRoutes);
+app.use('/api',GCollectionRoutes);
 
 export default app;
