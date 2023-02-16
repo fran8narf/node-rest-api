@@ -5,7 +5,7 @@
 // index -> arranque del servidor.
 // routes -> definición de las urls.
 import express from 'express';
-import GCollectionRoutes from './routes/gamesCollection.routes';
+import GCollectionRoutes from './routes/collection.routes';
 
 // our server -> contains all routes, methods, etc.
 const app = express();

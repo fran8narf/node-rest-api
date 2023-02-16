@@ -1,8 +1,8 @@
 ###
-GET http://localhost:30030/api/collection
+GET http://localhost:30030/api/collections
 
 ###
-POST http://localhost:30030/api/collection
+POST http://localhost:30030/api/collections
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collection
+POST http://localhost:30030/api/collections
 Content-Type: application/json
 
 {
@@ -22,11 +22,21 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collection
+POST http://localhost:30030/api/collections
 Content-Type: application/json
 
 {
   "name": "Funko's",
   "description": "All Funko Pop in my collection",
   "itemsCount": "17"
+}
+
+###
+POST http://localhost:30030/api/collections
+Content-Type: application/json
+
+{
+  "name": "Films & Series",
+  "description": "All films & series in my collection",
+  "itemsCount": "8"
 }
