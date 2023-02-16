@@ -6,5 +6,6 @@ import express from 'express';
 const app = express();
 
 // port used
-app.listen(3000);
-console.log(`server on port`, 3000);
+app.set('port', process.env.PORT || 3030);
+app.listen(app.get('port'));
+console.log(`server on port`, app.get('port'));
