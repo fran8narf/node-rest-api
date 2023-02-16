@@ -20,3 +20,13 @@ Content-Type: application/json
   "description": "All consoles in my collection",
   "itemsCount": "15"
 }
+
+###
+POST http://localhost:30030/api/collection
+Content-Type: application/json
+
+{
+  "name": "Funko's",
+  "description": "All Funko Pop in my collection",
+  "itemsCount": "17"
+}

@@ -13,6 +13,6 @@ const app = express();
 //JSON
 app.use(express.json());
 
-app.use('/api/collection',GCollectionRoutes);
+app.use('/api/collections',GCollectionRoutes);
 
 export default app;

@@ -3,8 +3,9 @@ import Collection from '../models/Collection';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.send('COLLECTION');
+router.get('/', async (req, res) => {
+  const collections = await Collection.find();
+  res.json(collections);
 });
 
 router.post('/', async (req, res) => {
