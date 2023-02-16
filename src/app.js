@@ -10,11 +10,8 @@ import GCollectionRoutes from './routes/gamesCollection.routes';
 // our server -> contains all routes, methods, etc.
 const app = express();
 
-app.get('/', (req, res) => {
-  res.json({
-    message : 'Welcome to my COLLECTION-REST-API'
-  })
-});
+//JSON
+app.use(express.json());
 
 app.use('/api/collection',GCollectionRoutes);
 

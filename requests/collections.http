@@ -1,0 +1,22 @@
+###
+GET http://localhost:30030/api/collection
+
+###
+POST http://localhost:30030/api/collection
+Content-Type: application/json
+
+{
+  "name": "Videogames",
+  "description": "All videogames in my collection",
+  "itemsCount": "60"
+}
+
+###
+POST http://localhost:30030/api/collection
+Content-Type: application/json
+
+{
+  "name": "Consoles",
+  "description": "All consoles in my collection",
+  "itemsCount": "15"
+}
