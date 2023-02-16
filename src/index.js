@@ -1,5 +1,6 @@
 // importamos express en una constante para utilizarlo.
-const express = require('express');
+// const express = require('express'); forma antigua sin BABEL-ENV
+import express from 'express';
 
 // our server -> contains all routes, methods, etc.
 const app = express();
