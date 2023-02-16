@@ -1,7 +1,7 @@
 import { Router } from 'express';
 const router = Router();
 
-router.get('/collection', (req, res) => {
+router.get('/', (req, res) => {
   res.send('COLLECTION');
 });
 

@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
   })
 });
 
-app.use('/api',GCollectionRoutes);
+app.use('/api/collection',GCollectionRoutes);
 
 export default app;
