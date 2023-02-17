@@ -1,7 +1,6 @@
 import Collection from '../models/Collection';
 
 export const getCollections = async (req, res) => {
-  console.log('get is fcking working');
   const collections = await Collection.find();
   res.json(collections);
 };
@@ -18,5 +17,6 @@ export const addCollection = async (req, res) => {
 };
 
 export const findOneCollection = (req, res) => {
+  console.log(req.params.id);
   res.json('one task');
 };

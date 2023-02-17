@@ -5,9 +5,9 @@ export const getVideoGames = async (req, res) => {
   res.json(videoGames);
 };
 
-export const findOneVideoGame = (req, res) => {
+/* export const findOneVideoGame = (req, res) => {
   res.json('one task');
-};
+}; */
 export const addVideoGame = async (req, res) => {
   const newVideoGame = new VideoGame({
     name : req.body.name,
