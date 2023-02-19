@@ -16,7 +16,8 @@ export const addCollection = async (req, res) => {
   res.json(collectionSaved);
 };
 
-export const findOneCollection = (req, res) => {
+export const findOneCollection = async (req, res) => {
   console.log(req.params.id);
-  res.json('one task');
+  const collection = await Collection.findById(req.params.id);
+  res.json(collection);
 };
