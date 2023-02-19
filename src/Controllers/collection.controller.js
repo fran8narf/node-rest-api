@@ -21,3 +21,10 @@ export const findOneCollection = async (req, res) => {
   const collection = await Collection.findById(req.params.id);
   res.json(collection);
 };
+
+export const deleteCollection = async (req, res) => {
+  const taskToDelete = await Collection.findByIdAndDelete(req.params.id);
+
+  res.json(taskToDelete);
+  console.log(taskToDelete + 'was deleted!!!!!!!!!!');
+};

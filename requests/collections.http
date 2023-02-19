@@ -2,15 +2,15 @@
 GET http://localhost:30030/api/collections
 
 ###
-GET http://localhost:30030/api/collections/63ee4445d3f5efa621a7ae23
+GET http://localhost:30030/api/collections/63ee43f5d3f5efa621a7ae21
 ###
 POST http://localhost:30030/api/collections
 Content-Type: application/json
 
 {
-  "name": "Videogames",
-  "description": "All videogames in my collection",
-  "itemsCount": "60"
+  "name": "Pruebapaborrar",
+  "description": "poiopipoi videogames in my collection",
+  "itemsCount": "123123"
 }
 
 ###
@@ -42,3 +42,6 @@ Content-Type: application/json
   "description": "All films & series in my collection",
   "itemsCount": "8"
 }
+
+###
+DELETE  http://localhost:30030/api/collections/63f2b399a2139d82dfa9f42b
