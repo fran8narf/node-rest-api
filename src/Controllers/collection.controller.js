@@ -18,6 +18,12 @@ export const getCollections = async (req, res) => {
 }; */
 
 export const addCollection = async (req, res) => {
+
+  if (!req.body.name || !req.body.description || !req.body.itemsCount) {
+    res.status(400).send({
+      message : 'Items send can not be empty'
+    });
+  }
   
   try {
     const newCollection = new Collection({

@@ -8,7 +8,6 @@ POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
 
 {
-  "name": "Pruebapaborrar",
   "description": "poiopipoi videogames in my collection",
   "itemsCount": "123123"
 }
@@ -44,7 +43,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:30030/api/collections/collection/63f2b908f3a46ae7af555607
+DELETE  http://localhost:30030/api/collections/collection/63f2c0b6abbd668c42de81e1
 
 ###
 GET http://localhost:30030/api/collections/greater
