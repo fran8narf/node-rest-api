@@ -5,11 +5,20 @@ export const getCollections = async (req, res) => {
   res.json(collections);
 };
 
+/* export const getCollectionsGreaterThan = async (req, res) => {
+  const collections = await Collection.find({
+    itemsCount : 15
+  });
+  res.json(collections);
+}; */
+
 export const addCollection = async (req, res) => {
   const newCollection = new Collection({
     name : req.body.name,
     description : req.body.description,
     itemsCount : req.body.itemsCount
+    // validación para rellenar si no viene
+    // itemsCount : req.body.itemsCount ? req.body.itemsCount : 0
   });
 
   const collectionSaved = await newCollection.save();
@@ -23,8 +32,8 @@ export const findOneCollection = async (req, res) => {
 };
 
 export const deleteCollection = async (req, res) => {
-  const taskToDelete = await Collection.findByIdAndDelete(req.params.id);
+  const collectionToDelete = await Collection.findByIdAndDelete(req.params.id);
 
-  res.json(taskToDelete);
-  console.log(taskToDelete + 'was deleted!!!!!!!!!!');
+  res.json(collectionToDelete);
+  console.log(collectionToDelete + 'was deleted!!!!!!!!!!');
 };

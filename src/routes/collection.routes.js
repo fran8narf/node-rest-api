@@ -7,9 +7,10 @@ const router = Router();
 
 // COLLECTIONS
 router.get('/', collectionCtrl.getCollections);
-router.post('/', collectionCtrl.addCollection);
-router.get('/:id', collectionCtrl.findOneCollection);
-router.delete('/:id', collectionCtrl.deleteCollection);
+router.post('/collection', collectionCtrl.addCollection);
+// router.get('/greater', collectionCtrl.getCollectionsGreaterThan);
+router.get('/collection/:id', collectionCtrl.findOneCollection);
+router.delete('/collection/:id', collectionCtrl.deleteCollection);
 
 // VIDEOGAMES
 router.get('/videoGames', videoGameCtrl.getVideoGames);

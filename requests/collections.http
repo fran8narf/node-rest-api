@@ -2,9 +2,9 @@
 GET http://localhost:30030/api/collections
 
 ###
-GET http://localhost:30030/api/collections/63ee43f5d3f5efa621a7ae21
+GET http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae21
 ###
-POST http://localhost:30030/api/collections
+POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections
+POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections
+POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections
+POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -44,4 +44,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:30030/api/collections/63f2b399a2139d82dfa9f42b
+DELETE  http://localhost:30030/api/collections/collection/63f2b908f3a46ae7af555607
+
+###
+GET http://localhost:30030/api/collections/greater
