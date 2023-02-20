@@ -43,7 +43,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:30030/api/collections/collection/63f2c0b6abbd668c42de81e1
+DELETE  http://localhost:30030/api/collections/collection/63f2c0b6abbd668c42de81e9
 
 ###
 GET http://localhost:30030/api/collections/greater

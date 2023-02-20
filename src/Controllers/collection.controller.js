@@ -61,6 +61,9 @@ export const deleteCollection = async (req, res) => {
   try {
     const { id } = req.params;
     const collectionToDelete = await Collection.findByIdAndDelete(id);  
+    if (!collectionToDelete) return res.status(404).json({
+      message : `The collection with id: ${id} doesn't exist`
+    });
     res.json(collectionToDelete);
     console.log(collectionToDelete + 'was deleted!!!!!!!!!!');
   } catch(err) {
