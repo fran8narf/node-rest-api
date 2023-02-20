@@ -48,7 +48,7 @@ export const findOneCollection = async (req, res) => {
     console.log(id);
     const collection = await Collection.findById(id);
     if (!collection) return res.status(404).json({
-      message: `The collection with id: ${id} doesn't exist`
+      message: `The collection you're trying to find with id: ${id} doesn't exist`
     });
     res.json(collection);
   } catch (err) {
@@ -63,7 +63,7 @@ export const deleteCollection = async (req, res) => {
     const collectionToDelete = await Collection.findByIdAndDelete(id);
 
     if (!collectionToDelete) return res.status(404).json({
-      message: `The collection with id: ${id} doesn't exist`
+      message: `The collection you're trying to delete with id: ${id} doesn't exist`
     });
 
     res.json(collectionToDelete);
@@ -80,7 +80,7 @@ export const updateCollection = async (req, res) => {
     const collectionToUpdate = await Collection.findByIdAndUpdate(id, req.body);
 
     if (!collectionToUpdate) return res.status(404).json({
-      message: `The collection with id: ${id} doesn't exist`
+      message: `The collection you're trying to updated with id: ${id} doesn't exist`
     });
 
     res.json('Task was successfully updated!!!');

@@ -49,7 +49,7 @@ DELETE  http://localhost:30030/api/collections/collection/63f2c0b6abbd668c42de81
 GET http://localhost:30030/api/collections/greater
 
 ###
-PUT http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae21
+PUT http://localhost:30030/api/collections/collection/63ee43f5d3f5efa623a7ae21
 Content-Type: application/json
 
 {
