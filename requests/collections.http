@@ -48,3 +48,11 @@ DELETE  http://localhost:30030/api/collections/collection/63f2b908f3a46ae7af5556
 
 ###
 GET http://localhost:30030/api/collections/greater
+
+###
+PUT http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae21
+Content-Type: application/json
+
+{
+  "name": "Videogames"
+}

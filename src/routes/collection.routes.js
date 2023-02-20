@@ -11,6 +11,7 @@ router.post('/collection', collectionCtrl.addCollection);
 // router.get('/greater', collectionCtrl.getCollectionsGreaterThan);
 router.get('/collection/:id', collectionCtrl.findOneCollection);
 router.delete('/collection/:id', collectionCtrl.deleteCollection);
+router.put('/collection/:id', collectionCtrl.updateCollection);
 
 // VIDEOGAMES
 router.get('/videoGames', videoGameCtrl.getVideoGames);

@@ -37,3 +37,8 @@ export const deleteCollection = async (req, res) => {
   res.json(collectionToDelete);
   console.log(collectionToDelete + 'was deleted!!!!!!!!!!');
 };
+
+export const updateCollection = async (req, res) => {
+  await Collection.findByIdAndUpdate(req.params.id, req.body);
+  res.json('Task was successfully updated!!!');
+};
