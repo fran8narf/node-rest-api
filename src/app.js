@@ -15,6 +15,9 @@ app.use(morgan('dev'));
 //JSON
 app.use(express.json());
 
+// Habilita el entendimiento de las peticiones desde formularios HTML.
+app.use(express.urlencoded({ extended: false }));
+
 
 app.use('/api/collections', GCollectionRoutes);
 
