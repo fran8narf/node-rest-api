@@ -43,8 +43,8 @@ export const addCollection = async (req, res) => {
 };
 
 export const findOneCollection = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     console.log(id);
     const collection = await Collection.findById(id);
     if (!collection) return res.status(404).json({
@@ -52,8 +52,9 @@ export const findOneCollection = async (req, res) => {
     });
     res.json(collection);
   } catch (err) {
-    console.log(`Error FINDING COLLECTION <<--------<`);
-    console.log(err);
+    res.status(500).json({
+      message: err.message || `Error retrieving collection id: ${id}`
+    });
   }
 };
 
