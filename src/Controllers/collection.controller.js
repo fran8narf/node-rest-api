@@ -59,8 +59,8 @@ export const findOneCollection = async (req, res) => {
 };
 
 export const deleteCollection = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const collectionToDelete = await Collection.findByIdAndDelete(id);
 
     if (!collectionToDelete) return res.status(404).json({
@@ -70,8 +70,9 @@ export const deleteCollection = async (req, res) => {
     res.json(collectionToDelete);
     console.log(collectionToDelete + 'was deleted!!!!!!!!!!');
   } catch (err) {
-    console.log(`Error DELETING COLLECTION: ${id} <<--------<`);
-    console.log(err);
+    res.status(500).json({
+      message: err.message || `Error while deleting collection with id: ${id}`
+    });
   }
 };
 
@@ -86,7 +87,8 @@ export const updateCollection = async (req, res) => {
 
     res.json('Task was successfully updated!!!');
   } catch (err) {
-    console.log(`Error UPDATING COLLECTION: ${id} <<--------<`);
-    console.log(err);
+    res.status(500).json({
+      message: err.message || `Error while trying to update collection with id: ${id}`
+    });
   }
 };
