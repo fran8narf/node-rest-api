@@ -47,9 +47,12 @@ export const findOneCollection = async (req, res) => {
     const { id } = req.params;
     console.log(id);
     const collection = await Collection.findById(id);
+    if (!collection) return res.status(404).json({
+      message : `The collection with id: ${id} doesn't exist`
+    });
     res.json(collection);
   } catch(err) {
-    console.log(`Error FINDING COLLECTION: ${id} <<--------<`);
+    console.log(`Error FINDING COLLECTION <<--------<`);
     console.log(err);
   }
 };

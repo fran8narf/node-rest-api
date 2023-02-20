@@ -2,7 +2,7 @@
 GET http://localhost:30030/api/collections
 
 ###
-GET http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae21
+GET http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae26
 ###
 POST http://localhost:30030/api/collections/collection
 Content-Type: application/json
