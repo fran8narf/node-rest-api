@@ -44,32 +44,35 @@ export const addCollection = async (req, res) => {
 
 export const findOneCollection = async (req, res) => {
   try {
-    console.log(req.params.id);
-    const collection = await Collection.findById(req.params.id);
+    const { id } = req.params;
+    console.log(id);
+    const collection = await Collection.findById(id);
     res.json(collection);
   } catch(err) {
-    console.log(`Error FINDING COLLECTION: ${req.params.id} <<--------<`);
+    console.log(`Error FINDING COLLECTION: ${id} <<--------<`);
     console.log(err);
   }
 };
 
 export const deleteCollection = async (req, res) => {
   try {
-    const collectionToDelete = await Collection.findByIdAndDelete(req.params.id);  
+    const { id } = req.params;
+    const collectionToDelete = await Collection.findByIdAndDelete(id);  
     res.json(collectionToDelete);
     console.log(collectionToDelete + 'was deleted!!!!!!!!!!');
   } catch(err) {
-    console.log(`Error DELETING COLLECTION: ${req.params.id} <<--------<`);
+    console.log(`Error DELETING COLLECTION: ${id} <<--------<`);
     console.log(err);
   }
 };
 
 export const updateCollection = async (req, res) => {
   try {
-    await Collection.findByIdAndUpdate(req.params.id, req.body);
+    const { id } = req.params;
+    await Collection.findByIdAndUpdate(id, req.body);
     res.json('Task was successfully updated!!!');
   } catch(err) {
-    console.log(`Error UPDATING COLLECTION: ${req.params.id} <<--------<`);
+    console.log(`Error UPDATING COLLECTION: ${id} <<--------<`);
     console.log(err);
   }
 };
