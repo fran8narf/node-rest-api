@@ -9,7 +9,7 @@ export const getCollections = async (req, res) => {
     
     const { limit, offset } = getPagination(page, size);
     
-    const collections = await Collection.paginate({ offset, limit }, );
+    const collections = await Collection.paginate({}, {offset, limit});
     res.json(collections);
   } catch (err) {
     console.log('Error getting collections <<-------<');
