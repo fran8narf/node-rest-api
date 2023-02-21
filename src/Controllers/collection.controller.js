@@ -2,7 +2,9 @@ import Collection from '../models/Collection';
 
 export const getCollections = async (req, res) => {
   try {
-    const collections = await Collection.find();
+    // paginate 1st empty object means to find all.
+    
+    const collections = await Collection.paginate({}, );
     res.json(collections);
   } catch (err) {
     console.log('Error getting collections <<-------<');
