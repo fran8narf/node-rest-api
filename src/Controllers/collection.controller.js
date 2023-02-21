@@ -1,10 +1,15 @@
 import Collection from '../models/Collection';
+import { getPagination } from '../libs/getPagination';
 
 export const getCollections = async (req, res) => {
   try {
     // paginate 1st empty object means to find all.
+    const { size, page } = req.query;
+    console.log(req.query);
     
-    const collections = await Collection.paginate({}, );
+    const { limit, offset } = getPagination(page, size);
+    
+    const collections = await Collection.paginate({ offset, limit }, );
     res.json(collections);
   } catch (err) {
     console.log('Error getting collections <<-------<');
