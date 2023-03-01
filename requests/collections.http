@@ -1,5 +1,8 @@
 ###
-GET http://localhost:30030/api/collections?size=2&page=2
+GET http://localhost:30030/api/collections?size=10&name=Consoles
+
+###
+GET http://localhost:30030/api/collections?size=3&page=0
 
 ###
 GET http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae26

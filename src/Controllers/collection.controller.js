@@ -4,12 +4,16 @@ import { getPagination } from '../libs/getPagination';
 export const getCollections = async (req, res) => {
   try {
     // paginate 1st empty object means to find all.
-    const { size, page } = req.query;
+    const { size, page, name } = req.query;
     console.log(req.query);
+
+    const condition = name ? {
+      name : {$regex: new RegExp(name), $options: "i"}
+    } : {};
     
     const { limit, offset } = getPagination(page, size);
     
-    const collections = await Collection.paginate({}, {offset, limit});
+    const collections = await Collection.paginate(condition, {offset, limit});
     res.json(collections);
   } catch (err) {
     console.log('Error getting collections <<-------<');
