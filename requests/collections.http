@@ -1,13 +1,12 @@
 ###
-GET http://localhost:30030/api/collections?size=10&name=Consoles
+GET http://enednarf.info:30030/api/collections
+###
+GET http://enednarf.info:30030/api/collections?size=3&page=1
 
 ###
-GET http://localhost:30030/api/collections?size=3&page=0
-
+GET http://enednarf.info:30030/api/collections/collection/6401d698a59aa3a61eaf1419
 ###
-GET http://localhost:30030/api/collections/collection/63ee43f5d3f5efa621a7ae26
-###
-POST http://localhost:30030/api/collections/collection
+POST http://enednarf.info:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -16,7 +15,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections/collection
+POST http://enednarf.info:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -26,7 +25,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections/collection
+POST http://enednarf.info:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -36,7 +35,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:30030/api/collections/collection
+POST http://enednarf.info:30030/api/collections/collection
 Content-Type: application/json
 
 {
@@ -46,13 +45,13 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:30030/api/collections/collection/63f2c0b6abbd668c42de81e9
+DELETE  http://enednarf.info:30030/api/collections/collection/63f2c0b6abbd668c42de81e9
 
 ###
-GET http://localhost:30030/api/collections/greater
+GET http://enednarf.info:30030/api/collectionsgreater
 
 ###
-PUT http://localhost:30030/api/collections/collection/63ee43f5d3f5efa623a7ae21
+PUT http://enednarf.info:30030/api/collections/collection/63ee43f5d3f5efa623a7ae21
 Content-Type: application/json
 
 {
