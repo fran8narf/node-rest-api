@@ -1,6 +1,9 @@
 import Collection from '../models/Collection';
 import { getPagination } from '../libs/getPagination';
 
+import multer from 'multer';
+import sizeOf from 'image-size';
+
 export const getCollections = async (req, res) => {
   try {
     // paginate 1st empty object means to find all.
@@ -28,7 +31,32 @@ export const getCollections = async (req, res) => {
   res.json(collections);
 }; */
 
-export const addCollection = async (req, res) => {
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads/');
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  fileFilter: function(req, file, cb) {
+    // Comprobar que el archivo es una imagen válida
+    const dimensions = sizeOf(file.path);
+    if (file.mimetype !== 'image/png' &&
+        file.mimetype !== 'image/jpeg' &&
+        file.mimetype !== 'image/jpg' &&
+        file.mimetype !== 'image/gif') {
+      cb(new Error('File type is not supported'), false);
+    } else {
+      cb(null, true);
+    }
+  }
+});
+
+/* export const addCollection = async (req, res) => {
 
   if (!req.body.name || !req.body.description || !req.body.itemsCount) {
     res.status(400).send({
@@ -47,6 +75,45 @@ export const addCollection = async (req, res) => {
 
     const collectionSaved = await newCollection.save();
     res.json(collectionSaved);
+  } catch (err) {
+    console.log('Error creating new COLLECTION <<--------<');
+    console.log(err);
+  }
+};*/
+
+export const addCollection = async (req, res) => {
+
+  if (!req.body.name || !req.body.description || !req.body.itemsCount) {
+    res.status(400).send({
+      message: 'Items send can not be empty'
+    });
+  }
+
+  try {
+    // Utilizar Multer para extraer la imagen del campo de archivo
+    upload.single('image')(req, res, async function(err) {
+      if (err) {
+        console.log(err);
+      }
+
+      // Comprobar que el archivo es una imagen válida
+      const dimensions = sizeOf(req.file.path);
+      if (dimensions.width === 0 || dimensions.height === 0) {
+        return res.status(400).send({message: 'Invalid image'});
+      }
+
+      // Crear una nueva instancia del modelo Collection con la imagen
+      const newCollection = new Collection({
+        name: req.body.name,
+        description: req.body.description,
+        itemsCount: req.body.itemsCount,
+        image: req.file.path
+      });
+
+      // Guardar la nueva colección en la base de datos
+      const collectionSaved = await newCollection.save();
+      res.json(collectionSaved);
+    });
   } catch (err) {
     console.log('Error creating new COLLECTION <<--------<');
     console.log(err);
