@@ -56,7 +56,7 @@ const upload = multer({
   }
 });
 
-/* export const addCollection = async (req, res) => {
+export const addCollection = async (req, res) => {
 
   if (!req.body.name || !req.body.description || !req.body.itemsCount) {
     res.status(400).send({
@@ -79,9 +79,9 @@ const upload = multer({
     console.log('Error creating new COLLECTION <<--------<');
     console.log(err);
   }
-};*/
+};
 
-export const addCollection = async (req, res) => {
+/* export const addCollection = async (req, res) => {
 
   if (!req.body.name || !req.body.description || !req.body.itemsCount) {
     res.status(400).send({
@@ -119,7 +119,7 @@ export const addCollection = async (req, res) => {
     console.log(err);
   }
 };
-
+ */
 export const findOneCollection = async (req, res) => {
   const { id } = req.params;
   try {
