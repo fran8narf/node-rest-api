@@ -1,5 +1,5 @@
 ###
-GET http://enednarf.info:30030/api/collections
+GET http://localhost:30030/api/collections
 ###
 GET http://enednarf.info:30030/api/collections?size=3&page=1
 

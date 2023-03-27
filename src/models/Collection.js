@@ -15,6 +15,10 @@ const collectionSchema = new Schema({
   itemsCount : {
     type: Number,
     required: true
+  },
+  image : {
+    type: String,
+    required: false
   }
 }, {
   // elimina el __v
