@@ -1,8 +1,9 @@
 import Collection from '../models/Collection';
 import { getPagination } from '../libs/getPagination';
 
-import multer from 'multer';
 import path from "path";
+import sharp from 'sharp';
+import fs from 'fs/promises';
 
 export const getCollections = async (req, res) => {
   try {
@@ -32,7 +33,26 @@ export const addCollection = async (req, res) => {
   }
 
   // Si existe una imagen cargada, guarda su ruta relativa en la base de datos
-  const imagePath = req.file ? path.join("/uploads", req.file.filename) : null;
+  let imagePath = null;
+  if (req.file) {
+    // Comprime la imagen antes de guardarla
+    const compressedImage = await sharp(req.file.path)
+      .resize({ width: 600 }) // Ajusta el ancho de la imagen a 800 píxeles
+      .jpeg({ quality: 70 }) // Comprime la imagen en formato JPEG con calidad del 70%
+      .toBuffer(); // Devuelve la imagen en formato de buffer
+
+    // Guarda la imagen comprimida en el servidor
+    const uploadsFolder = path.resolve(__dirname, '../..', 'uploads');
+    const compressedImagePath = path.join(uploadsFolder, `compressed-${req.file.filename}`);
+
+    await fs.writeFile(compressedImagePath, compressedImage);
+
+    // Elimina la imagen original del servidor
+    await fs.unlink(req.file.path);
+
+    // Guarda la ruta de la imagen comprimida en la base de datos
+    imagePath = compressedImagePath;
+  }
 
   try {
     const newCollection = new Collection({
