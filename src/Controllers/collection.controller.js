@@ -2,7 +2,6 @@ import Collection from '../models/Collection';
 import { getPagination } from '../libs/getPagination';
 
 import multer from 'multer';
-import sizeOf from 'image-size';
 import path from "path";
 
 export const getCollections = async (req, res) => {
@@ -24,22 +23,6 @@ export const getCollections = async (req, res) => {
     console.log(err);
   }
 }
-
-/* export const getCollectionsGreaterThan = async (req, res) => {
-  const collections = await Collection.find({
-    itemsCount : 15
-  });
-  res.json(collections);
-}; */
-
-const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, './uploads/');
-  },
-  filename: function(req, file, cb) {
-    cb(null, new Date().toISOString() + file.originalname);
-  }
-});
 
 export const addCollection = async (req, res) => {
   if (!req.body.name || !req.body.description || !req.body.itemsCount) {
