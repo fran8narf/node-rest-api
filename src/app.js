@@ -1,6 +1,3 @@
-// importamos express en una constante para utilizarlo.
-// const express = require('express'); forma antigua sin BABEL-ENV
-
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
@@ -11,6 +8,10 @@ import GCollectionRoutes from './routes/collection.routes';
 const app = express();
 
 app.set('port', process.env.PORT || 3030);
+
+
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // CORS
 // const corsOptions = {origin : 'http://localhost:3000'};
